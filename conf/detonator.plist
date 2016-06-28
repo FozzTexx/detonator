@@ -1,0 +1,8 @@
+{
+  relay = {
+    fields = ("+row:i", "+col:i", "label:*", "used:i");
+  }
+  relay_row = {
+    fields = ("+row:i");
+  }
+}

@@ -1,0 +1,11 @@
+<cl_page cl_owner="=Controller" />
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+<body>
+  <a cl_action="edit">[edit]</a>
+  <cl_marker cl_binding="=fireworks" />
+  <table>
+    <cl_marker cl_binding="=relayRows" />
+  </table>
+</body>

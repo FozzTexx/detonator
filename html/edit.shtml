@@ -1,0 +1,6 @@
+<form cl_action="edit:">
+  <table>
+    <cl_marker cl_autonumber cl_binding="=editRows.objects.tableRow" />
+  </table>
+  <input type=submit value=Save>
+</form>
