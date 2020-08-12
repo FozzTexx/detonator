@@ -1,0 +1,4 @@
+FROM mysql
+
+# Install required packages
+ADD detonator.sql /docker-entrypoint-initdb.d/

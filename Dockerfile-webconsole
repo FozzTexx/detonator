@@ -1,0 +1,25 @@
+FROM httpd
+
+ENV DEBIAN_FRONTEND noninteractive
+ENV SRCDIR=/usr/local/src/detonator
+
+RUN apt-get update && apt-get install -y build-essential git \
+    gobjc python python-pip \
+    libmariadb-dev-compat libssl-dev freetds-dev libffi-dev libpcre3-dev \
+    libjpeg-dev libpng-dev libtiff-dev
+
+RUN pip install RPi.GPIO
+
+# Install required packages
+ADD html /usr/local/apache2/htdocs/cl/
+ADD index.asis /usr/local/apache2/htdocs/
+ADD conf /usr/local/apache2/conf/cl/
+RUN ln -s detonator.conf /usr/local/apache2/conf/cl/cl.conf
+ADD src $SRCDIR/
+ADD fireworks.py /usr/local/bin/
+ADD install.sh $SRCDIR/
+
+RUN $SRCDIR/install.sh
+
+ADD httpd.conf /usr/local/apache2/conf/
+RUN rm /usr/local/apache2/htdocs/index.html

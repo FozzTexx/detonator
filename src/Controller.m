@@ -36,7 +36,7 @@
   CLMutableString *mString;
   
 
-  mString = [CLMutableString stringWithString:@"sudo fireworks"];
+  mString = [CLMutableString stringWithString:@"fireworks.py"];
   for (i = 0; i < MAX_ROWS; i++)
     for (j = 0; j < MAX_COLS; j++) {
       aRelay = [Relay relayForColumn:j+1 row:i+1];
